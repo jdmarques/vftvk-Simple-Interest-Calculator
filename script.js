@@ -23,6 +23,11 @@ function sliderRangeUpdate() {
 
 function compute()
 {
+    if (!document.getElementById("amount").value)
+    {
+        alert("Amount must be defined");
+        return;
+    }
 
     let amount = document.getElementById("amount").value;
     let rate = document.getElementById("sliderRange").value;
@@ -32,14 +37,15 @@ function compute()
 
     document.getElementById("computeOut1").innerHTML = "If you deposit " + amount + ","
     document.getElementById("computeOut2").innerHTML = "at an interest rate of " + rate + "%,"
-    document.getElementById("computeOut3").innerHTML = "you'll receive " + (amount * rate * years) + ","
+    document.getElementById("computeOut3").innerHTML = "you'll receive " + (amount * rate * years / 100) + ","
     document.getElementById("computeOut4").innerHTML = "In the year " + currentYear
 }
 
-function validateAmount()
+function validateAmount(node)
 {
     if (document.getElementById("amount").value < 1 )
     {
         alert("Amount must be bigger than 0");
+        node.focus();
     }
 }
