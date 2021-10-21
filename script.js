@@ -24,14 +24,22 @@ function sliderRangeUpdate() {
 function compute()
 {
 
-    let ammount = document.getElementById("ammount").value;
+    let amount = document.getElementById("amount").value;
     let rate = document.getElementById("sliderRange").value;
     let years = document.getElementById("years").value;
     const d = new Date()
     let currentYear = parseInt(d.getFullYear()) + parseInt(years)
 
-    document.getElementById("computeOut1").innerHTML = "If you deposit " + ammount + ","
+    document.getElementById("computeOut1").innerHTML = "If you deposit " + amount + ","
     document.getElementById("computeOut2").innerHTML = "at an interest rate of " + rate + "%,"
-    document.getElementById("computeOut3").innerHTML = "you'll receive " + (ammount * rate * years) + ","
+    document.getElementById("computeOut3").innerHTML = "you'll receive " + (amount * rate * years) + ","
     document.getElementById("computeOut4").innerHTML = "In the year " + currentYear
+}
+
+function validateAmount()
+{
+    if (document.getElementById("amount").value < 1 )
+    {
+        alert("Amount must be bigger than 0");
+    }
 }
