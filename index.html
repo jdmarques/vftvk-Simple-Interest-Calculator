@@ -6,11 +6,11 @@
     <body>
         <h1>Simple Interest Calculator</h1>
 
-        Amount <input type="number"  id="amount" min=1 onchange="validateAmount()">
+        Amount <input type="number"  id="amount" min=1 onchange="validateAmount(this)">
         <br><br/>
 
         <div class="rangeslider">
-            Interest Rate:<input type="range" min="1" max="100" value="10"
+            Interest Rate:<input type="range" min="1.0" max="20.0" value="3.5" step="0.5"
                             class="myslider" id="sliderRange">
                             <span id="sliderValue"></span>
         </div>
@@ -32,7 +32,7 @@
         <div id="computeOut3"></div>
         <div id="computeOut4"></div>
 
-        Ⓒ Everyone Can Get Rich
+        <footer>&copy; Everyone Can Get Rich</footer>
 
     </body>
 </html>
